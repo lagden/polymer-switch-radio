@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Example Switch</title>
+  </head>
+  <body>
+    <form action="demo.html" method="GET">
+        <switch-radio currentName="ex1" captionOn="Yessss" valueOn="Yessss" captionOff="Nop" valueOff="Nop"></switch-radio>
+        <switch-radio currentName="ex2" captionOn="S" valueOn="S" captionOff="N" valueOff="N"></switch-radio>
+        <switch-radio currentName="ex3" captionOn="Sim" valueOn="Sim" captionOff="Não" valueOff="Não"></switch-radio>
+        <switch-radio currentName="ex4"></switch-radio>
+        <switch-radio currentName="ex5" captionOn="Sisisi" captionOff="Nonono" disabled></switch-radio>
+        <switch-radio currentName="ex6" captionOn="2P" valueOn="2" captionOff="4P" valueOff="4" checked></switch-radio>
+        <br>
+        <button type="submit">Send</button>
+    </form>
+    <script type="text/javascript" async>
+        function handleLoad(e) {
+            console.log('Loaded import: ' + e.target.href);
+        }
+
+        function handleError(e) {
+            console.error('Error loading import: ' + e.target.href);
+        }
+
+        function loadLink(file, rel, type) {
+            var link = document.createElement('link');
+            link.rel = rel;
+            link.href = file
+            link.onload = handleLoad;
+            link.onerror = handleError;
+            if (type)
+                s.type = type;
+            document.head.appendChild(link);
+        }
+
+        function loadScript(src, async, init, type) {
+            async = async || false;
+            init = init || false;
+            type = type || false;
+            var s = document.createElement('script');
+            s.src = src;
+            if (type)
+                s.type = type;
+            if (async)
+                s.async = async;
+            if (async && init)
+                s.onload = s.onreadystatechange = init;
+            document.head.appendChild(s);
+        }
+
+        var Platform = {flags: {debug: true}};
+        loadScript('bower_components/platform/platform.js');
+        loadLink('switch-radio.html', 'import');
+    </script>
+  </body>
+</html>

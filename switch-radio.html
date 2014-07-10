@@ -1,0 +1,35 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<polymer-element name="switch-radio" tabindex="0" attributes="captionOn valueOn captionOff valueOff currentValue currentName" touch-action="pan-y" aria-checked="false" aria-value="0">
+
+    <template>
+        <style>
+            :host {
+                display: inline-block;
+                position: relative;
+            }
+
+            :host(:focus) {
+                outline: none;
+            }
+
+            :host([disabled]) {
+                pointer-events: none;
+            }
+
+            :host([disabled]) .switchRadio {
+                opacity: 0.5;
+            }
+        </style>
+        <link rel="stylesheet" href="switch-radio.css" id="switchStyle">
+        <div id="switchRadio" class="switchRadio">
+            <div id="switchRadioFlex" class="switchRadio__flex" checked?="{{checked}}" on-tap="{{toogle}}" on-trackstart="{{ trackStart }}" on-track="{{ track }}" on-trackend="{{ trackEnd }}">
+                <div id="switchRadioUnChecked" class="switchRadio__caption switchRadio__caption--unchecked">{{captionOff}}</div>
+                <div id="switchRadioKnob" class="switchRadio__knob"></div>
+                <div id="switchRadioChecked" class="switchRadio__caption switchRadio__caption--checked">{{captionOn}}</div>
+            </div>
+        </div>
+    </template>
+    <script src="switchRadio.js"></script>
+
+</polymer-element>

@@ -1,0 +1,32 @@
+{
+  "name": "switch-radio",
+  "version": "0.0.1",
+  "authors": [
+    "Thiago Lagden <lagden@gmail.com>"
+  ],
+  "description": "Custom radio with 2 options",
+  "main": "switch-radio.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "radio",
+    "switch",
+    "polymer",
+    "custom"
+  ],
+  "license": "MIT",
+  "homepage": "http://lagden.in",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.3"
+  }
+}

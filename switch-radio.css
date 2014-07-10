@@ -1,0 +1,51 @@
+.switchRadio {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  width: auto;
+  height: 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 50em;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px inset, rgba(255, 255, 255, 0.2) 0px 1px 0px;
+  background: #333333;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.switchRadio__flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  height: 26px;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.08s ease, -webkit-transform 0.08s linear;
+  transition: opacity 0.08s ease, -webkit-transform 0.08s linear;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.switchRadio__flex.dragging {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.switchRadio__caption {
+  pointer-events: none;
+  box-sizing: border-box;
+  font-size: 0.85em;
+  text-align: center;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.switchRadio__knob {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: linear-gradient(#f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+}
